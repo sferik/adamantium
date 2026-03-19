@@ -14,6 +14,21 @@ module Adamantium
       Freezer::Deep
     end
 
+    # Check if a method is memoized
+    #
+    # @example
+    #   class.memoized?(:hash)
+    #
+    # @param [Symbol] method_name
+    #   a method name to check
+    #
+    # @return [Boolean]
+    #
+    # @api public
+    def memoized?(method_name)
+      memoized_methods.key?(method_name)
+    end
+
     # Memoize a list of methods
     #
     # @example
